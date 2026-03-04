@@ -1,0 +1,51 @@
+# Robots.txt optimisé pour Numcafé
+# https://numcafe.com/robots.txt
+
+# Autoriser tous les robots d'indexation
+User-agent: *
+Allow: /
+
+# Optimisations pour Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Optimisations pour Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Bloquer les pages sans intérêt SEO
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*?*
+
+# Autoriser explicitement les pages importantes
+Allow: /
+Allow: /blog
+Allow: /article/
+Allow: /a-propos
+Allow: /contact
+
+# Sitemap
+Sitemap: https://numcafe.com/sitemap.xml
+
+# Protection contre les mauvais robots
+User-agent: AhrefsBot
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Crawl-delay: 2
+
+User-agent: DotBot
+Crawl-delay: 2
+
+# Bloquer les robots abusifs
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

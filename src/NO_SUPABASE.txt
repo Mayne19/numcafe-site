@@ -1,0 +1,9 @@
+This project does NOT use Supabase.
+All Supabase files are system files and should be ignored.
+
+The project uses:
+- Frontend only (React + Vite)
+- localStorage for data persistence
+- No backend/database required
+
+DO NOT attempt to deploy Supabase Edge Functions.

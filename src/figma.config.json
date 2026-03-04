@@ -1,0 +1,10 @@
+{
+  "supabase": {
+    "enabled": false,
+    "skipEdgeFunctions": true
+  },
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  }
+}

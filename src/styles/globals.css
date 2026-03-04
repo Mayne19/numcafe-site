@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: #1D1D1D;
+  --card: #ffffff;
+  --card-foreground: #1D1D1D;
+  --popover: #ffffff;
+  --popover-foreground: #1D1D1D;
+  --primary: #1D1D1D;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #1D1D1D;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+  --accent: #C69C6D;
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #C69C6D;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  :root {
+    --font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size: 12px;
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: #1D1D1D;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      color: #1D1D1D;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #1D1D1D;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #1D1D1D;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      color: #555555;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom Coffee Cup Bullet Points */
+.coffee-list {
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.coffee-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.4rem; /* Interligne réduit */
+  line-height: 1.6;
+  color: #555555;
+}
+
+.coffee-list li::before {
+  content: '☕';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  font-size: 1.1rem;
+  color: #C69C6D;
+}
+
+/* Ordered list with coffee numbers */
+.coffee-list-ordered {
+  list-style: none;
+  counter-reset: coffee-counter;
+  padding-left: 2rem; /* Décalage vers la droite */
+}
+
+.coffee-list-ordered li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 0.4rem; /* Interligne réduit */
+  line-height: 1.6;
+  counter-increment: coffee-counter;
+  color: #555555; /* Couleur du texte des listes ordonnées */
+}
+
+.coffee-list-ordered li::before {
+  content: counter(coffee-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: linear-gradient(135deg, #C69C6D 0%, #B88C5D 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Custom table styles for articles - Style comparatif Numcafé */
+/* 
+  TEMPLATE POUR TOUS LES TABLEAUX COMPARATIFS :
+  
+  Structure HTML à utiliser :
+  
+  <table class="article-table">
+    <thead>
+      <tr>
+        <th>Colonne 1</th>
+        <th>Colonne 2</th>
+        <th>Colonne 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="highlight">Intitulé ligne 1</td>
+        <td>Valeur colonne 2</td>
+        <td>Valeur colonne 3</td>
+      </tr>
+      <tr>
+        <td class="highlight">Intitulé ligne 2</td>
+        <td>Valeur colonne 2</td>
+        <td>Valeur colonne 3</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  Style automatique appliqué :
+  1. En-tête (première ligne) : fond #C89E6D, texte blanc centré en gras
+  2. Toutes les cellules du tbody : fond doré léger (#FFF9F0), texte aligné à gauche
+  3. Première colonne (td:first-child) : texte couleur café (#C69C6D), aligné à gauche
+  4. Bordures : séparateurs légers #EAEAEA
+  5. .highlight : pour les cellules importantes (couleur café #C69C6D)
+*/
+.article-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #EAEAEA;
+}
+
+/* En-tête (première ligne) : fond #C89E6D, texte blanc centré en gras */
+.article-table thead {
+  background: #C89E6D;
+}
+
+.article-table th {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem; /* Ajusté pour correspondre aux textes du site */
+  color: white;
+  border-bottom: 1px solid #EAEAEA;
+}
+
+/* Première colonne (intitulés) : fond doré léger, texte couleur café, aligné à gauche */
+.article-table tbody tr td:first-child {
+  background: #FFF9F0; /* Fond doré léger au lieu de blanc pur */
+  text-align: left;
+  font-weight: 500;
+  color: #C69C6D; /* Couleur café pour les paramètres */
+}
+
+/* Toutes les autres cellules : fond doré léger, texte #555555, aligné à gauche */
+.article-table tbody tr {
+  background: #FFF9F0; /* Fond doré léger au lieu de blanc pur */
+}
+
+.article-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #EAEAEA;
+  color: #555555;
+  text-align: left;
+  background: #FFF9F0; /* Fond doré léger pour toutes les cellules */
+  font-size: 1rem; /* Ajusté pour correspondre aux textes du site */
+  line-height: 1.7; /* Ajusté pour correspondre aux paragraphes */
+}
+
+.article-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Séparateurs verticaux très légers entre les cellules */
+.article-table td + td,
+.article-table th + th {
+  border-left: 1px solid #EAEAEA;
+}
+
+/* Highlight pour les cellules importantes (comme avant mais avec fond plus doux) */
+.article-table .highlight {
+  font-weight: 600;
+  color: #C69C6D;
+}
+
+/* Première cellule de l'en-tête alignée à gauche si c'est un intitulé */
+.article-table th:first-child {
+  text-align: center;
+}
+
+/* Responsive table styles for mobile */
+@media (max-width: 768px) {
+  .article-table {
+    font-size: 0.85rem;
+    margin: 1.5rem 0;
+  }
+  
+  .article-table th,
+  .article-table td {
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-table {
+    font-size: 0.8rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .article-table th,
+  .article-table td {
+    padding: 0.6rem 0.75rem;
+    white-space: nowrap;
+  }
+}
+
+/* Article Content Typography - Override prose styles for clear differentiation */
+.prose h1 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  color: #1D1D1D !important;
+}
+
+.prose h2 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #1D1D1D !important;
+}
+
+.prose h3 {
+  font-size: 1.27rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  color: #1D1D1D !important;
+}
+
+.prose p {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 2rem !important;
+  color: #555555 !important;
+}
+
+/* All block elements inherit the same spacing */
+.prose > div {
+  margin-bottom: 2rem !important;
+}
+
+.prose ul {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.prose ol {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.4rem; /* Interligne réduit */
+  list-style: none;
+  color: #555555; /* Couleur du texte des listes */
+}
+
+/* Coffee cup icon bullet - filled version */
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23C69C6D' stroke='%23C69C6D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v2'/%3E%3Cpath d='M14 2v2'/%3E%3Cpath d='M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1'/%3E%3Cpath d='M6 2v2'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

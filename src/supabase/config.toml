@@ -1,0 +1,17 @@
+# Supabase configuration - DISABLED
+# This project does NOT use Supabase
+
+[api]
+enabled = false
+
+[db]
+enabled = false
+
+[storage]
+enabled = false
+
+[auth]
+enabled = false
+
+[functions]
+enabled = false

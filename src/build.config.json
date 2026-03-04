@@ -1,0 +1,11 @@
+{
+  "type": "frontend-only",
+  "framework": "vite-react",
+  "supabase": false,
+  "database": false,
+  "backend": false,
+  "edgeFunctions": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
+}

@@ -1,0 +1,23 @@
+# Supabase LOCAL configuration - DISABLED
+# This project does NOT use Supabase
+
+project_id = "disabled"
+
+[api]
+enabled = false
+port = 0
+
+[db]
+enabled = false
+
+[storage]
+enabled = false
+
+[auth]
+enabled = false
+
+[edge_runtime]
+enabled = false
+
+[functions.make-server]
+enabled = false
